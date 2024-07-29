@@ -6,7 +6,7 @@ function WeekNavTabs({ activeTab, defaultActive , addWeekModal , isDisabled  }) 
                 <Container>
                     <Row>
                         <Col>
-                            <div className='d-flex align-items-center justify-content-between'>
+                            <div className='d-flex align-items-center justify-content-between nav-tab-container'>
                                 <Nav variant="pills" className="flex-row">
                                     <Nav.Item>
                                         <Nav.Link eventKey="all_meals">All Meals</Nav.Link>
@@ -24,7 +24,7 @@ function WeekNavTabs({ activeTab, defaultActive , addWeekModal , isDisabled  }) 
                                         <Nav.Link eventKey="week4">Week 4</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
-                                <div>
+                                <div className='btn-container' >
                                     <Button disabled={isDisabled} onClick={addWeekModal} className='add_week_btn' >Add to Week</Button>
                                 </div>
                             </div>

@@ -89,14 +89,24 @@ function MealSection() {
     }
 
     if (selectedWeek.length <= 0) {
-      alert('Please Select Week');
+      toast.warn("Please select a week first", {
+        position: "top-center",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme: "light",
+      });
     } else {
       const filteredDishes = allMeals.filter((data) => recipeSelectCard.includes(data.id));
-      const dishesofWeek = filteredDishes.map((val) => ({
-        ...val,
-        dishforWeek: selectedWeek
-      }));
-
+      const dishesofWeek = filteredDishes.map((val) => {
+        const existingDish = weekDishes.find(dish => dish.id === val.id);
+        return {
+          ...val,
+          dishforWeek: existingDish ? [...new Set([...existingDish.dishforWeek, ...selectedWeek])] : selectedWeek
+        };
+      });
       setWeekDishes((existingVal) => {
         let updatedDishes = [...existingVal];
         dishesofWeek.forEach((newDish) => {
@@ -370,7 +380,7 @@ function MealSection() {
       <Modal size="lg" centered show={addWeekModal} onHide={() => setAddWeekModal(!addWeekModal)}>
         <Modal.Body className='p-5 d-flex flex-column align-items-center gap-3' >
           <h3 className='fw-bold' >Select Week</h3>
-          <div className="d-flex justify-content-between gap-4 p-3">
+          <div className="d-flex justify-content-between gap-4 p-3 flex-wrap">
             {weeks.map((week) => (
               <div
                 className='week_selection_btn'
