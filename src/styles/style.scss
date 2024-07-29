@@ -1,0 +1,137 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background: rgb(250, 244, 238);
+    background: linear-gradient(90deg, rgba(250, 244, 238, 1) 19%, rgba(250, 236, 244, 1) 43%, rgba(244, 236, 248, 1) 69%, rgba(230, 243, 250, 1) 91%);
+    .main_cover {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../public/assets/images/cover.png);
+        height: 300px;
+        padding: 50px;
+        p.lead {
+            font-weight: 500;
+            color: black;
+        }
+    }
+    .add_week_btn {
+        background-color: #044474;
+        border-radius: 5px;
+        padding: 10px 50px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        white-space: nowrap;
+        &:hover {
+            background-color: #02599c;
+        }
+
+        &:active {
+            background-color: #096db9;
+        }
+
+        &:focus {
+            background-color: #096db9;
+        }
+
+        &:disabled {
+            background-color: #667d8f;
+        }
+    }
+    .nav-pills {
+        flex: 2;
+        justify-content: flex-start;
+        gap: 5rem;
+        .nav-item {
+            padding: 8px;
+            .nav-link {
+                color: black;
+                font-size: large;
+                font-weight: 600;
+                border-radius: 0px;
+            }
+            .active {
+                background-color: transparent;
+                color: #02599c;
+                border-bottom: 5px solid #02599c;
+            }
+        }
+    }
+    .recipe_card {
+        width: 24.5rem;
+        padding: 10px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        cursor: pointer;
+
+        .recipe_card_top {
+            padding: 10px;
+            position: relative;
+
+            .recipe_product_img {
+                height: 250px;
+                object-fit: cover;
+                width: 100%;
+            }
+            .meal_type_badge {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                font-size: small;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                padding: 3px 30px;
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: small;
+            }
+            .delete_btn {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                border-radius: 2px;
+                background-color: #ffe0e0;
+                border: none;
+                outline: none;
+                padding: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                background-color: #f1b9b9;
+                    
+                }
+                
+            }
+        }
+    }
+    .card-body {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        .recipe_title {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+        .recipe_content {
+            font-size: small;
+            color: rgb(86, 86, 86);
+            font-weight: 500;
+        }
+    }
+    .selected-border {
+        border: 2px solid #044474;
+    }
+    .ball-pulse>div {
+        background-color: #044474;
+    }
+    .week_selection_btn {
+        cursor: pointer;
+        padding: 10px 40px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: x-large;
+        white-space: nowrap;
+    }
+    
+}
